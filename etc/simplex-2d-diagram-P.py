@@ -58,7 +58,8 @@ add_poly(ax1,o[3,3][0:3],"black",(0,0,0,0.2))
 
 ax1.text(*o[3,3][0],"$(x'_0,y'_0)$",va="top",ha="right")
 ax1.text(*o[3,3][1],"$(x'_1,y'_1)$",va="top",ha="left")
-ax1.text(*o[3,3][2],"$(x'_2,y'_2)$",va="bottom",ha="left")
+ax1.text(*o[3,3][2],"$(x'_3,y'_3)$",va="bottom",ha="left")
+ax1.text(*o[3,3][4],"$(x'_2,y'_2)$",va="bottom",ha="right")
 
 ax0.text(*s[3,3][0],"$(x_0,y_0)$",va="top",ha="right")
 ax0.text(*s[3,3][1],"$(x_1,y_1)$",va="top",ha="left")
@@ -92,5 +93,5 @@ draw_axes(ax1)
 
 #fig.delaxes(ax1)
 
-#plt.savefig("P-2d.svg")
+#plt.savefig("simplex-2d-diagram-P.svg")
 plt.show()
