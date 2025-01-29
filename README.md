@@ -3,7 +3,7 @@
 ## Overview
 
 This is a Simplex noise implementation in python.  
-It is used in my blog about Perlin noise.  
+It is used in my blog about Simplex noise.  
 
 [ゆっくりSimplex noiseしていってね](https://sioramen.sub.jp/blog2/blog/2025/01/28/%e3%82%86%e3%81%a3%e3%81%8f%e3%82%8asimplex-noise-%e3%81%97%e3%81%a6%e3%81%84%e3%81%a3%e3%81%a6%e3%81%ad/)  
 
