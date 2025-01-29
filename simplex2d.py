@@ -63,9 +63,9 @@ def simplex2d(xin,yin):
     return calc(n0,m0,xin,yin)+calc(n1,m1,xin,yin)+calc(n2,m2,xin,yin)
 
 if __name__=="__main__":
-    def ij(im,jm):
-        for i in range(im):
-            for j in range(jm):
+    def ij(m,n):
+        for i in range(m):
+            for j in range(n):
                 yield i,j
     #make plot data
     HI=3
@@ -87,10 +87,10 @@ if __name__=="__main__":
         s=np.zeros([M,M,6,2])
         for i,j in ij(M,M):
             s[i,j]=[np.matmul(S,p) for p in SQUARE+(j,i)]
-            option={"facecolor":(0,0,0,0),
-                    "edgecolor":(1,0,0,0.3),
-                    "closed":False}
-            poly=plt.Polygon(s[i,j],**option)
+            options={"facecolor":(0,0,0,0),
+                     "edgecolor":(1,0,0,0.3),
+                     "closed":False}
+            poly=plt.Polygon(s[i,j],**options)
             ax.add_patch(poly)
     show_grid()
     ax.set_xlabel("x")
