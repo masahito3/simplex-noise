@@ -69,7 +69,7 @@ if __name__=="__main__":
                 yield i,j
     #make plot data
     HI=3
-    X=Y=np.arange(0,HI+0.05,0.05)
+    X=Y=np.arange(0,HI+0.04,0.05)
     X,Y=np.meshgrid(X,Y,indexing="ij") #x[nx,ny]
     Z=np.empty(X.shape)
     for nx,ny in ij(*X.shape):
