@@ -72,7 +72,7 @@ if __name__=="__main__":
     X=Y=np.arange(0,HI+0.05,0.05)
     X,Y=np.meshgrid(X,Y,indexing="ij") #x[nx,ny]
     Z=np.empty(X.shape)
-    for nx,ny in ij(X.shape[0],X.shape[1]):
+    for nx,ny in ij(*X.shape):
         Z[nx,ny]=simplex2d(X[nx,ny],Y[nx,ny])
     #print(np.max(Z),np.min(Z))
     fig, ax = plt.subplots(figsize=(6,6),layout="constrained")
