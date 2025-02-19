@@ -1,4 +1,4 @@
-# A Simplex noise
+# Simplex noise
 
 ## Overview
 
