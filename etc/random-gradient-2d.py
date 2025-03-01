@@ -2,6 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as patheffects
 from matplotlib.ticker import *
+from matplotlib.path import Path
+from matplotlib import patches
+
+plt.rcParams["text.usetex"] = True
 
 N=2
 F=(np.sqrt(N+1)-1)/N
@@ -30,25 +34,41 @@ fig,ax=plt.subplots(nrows=1,ncols=2,sharex=False,figsize=(8,4))
 plt.subplots_adjust(wspace=0.6)
 ax0=ax[0]
 ax1=ax[1]
- 
+
+def arrow(x,y,dx,dy,color="red"):
+    options={"x":x,"y":y,"dx":dx,"dy":dy,"width":0.02,
+             "color":color,
+             "length_includes_head":True,
+             "overhang":0.1,
+             "head_length":0.15}
+    arrow = patches.FancyArrow(**options)
+    ax0.add_patch(arrow)
+
+
 P=np.array([1.5,2])
 def draw_P():
     ax0.plot(*P,".")
-    ax0.text(*(P),"P",va="bottom",ha="left",fontsize=16)
+    ax0.text(*(P),"P",va="bottom",ha="left",fontsize=20)
 draw_P()
+
+def draw_O():
+    ax0.plot(*s[3,2][0],".",color="green")
+    ax0.text(*(s[3,2][0]),"O",va="bottom",ha="center",fontsize=20)
+draw_O()
 
 def draw_U():
     X,Y=s[3,2][0]
-    U,V=P[0]-X,P[1]-Y
-    ax0.quiver(X,Y,U,V,angles="xy",scale_units="xy",scale=1,clip_on=False,color=(0,0,0,0.3),width=0.02)
-    ax0.text(X+0.3,Y+0.05,r"$\vec u$",va="bottom",ha="right",fontsize=16)
+    arrow(X,Y,P[0]-X,P[1]-Y,color=(0,0,0,0.3))
+    ax0.text(X+0.3,Y+0.05,r"$\vec u$",va="bottom",ha="right",fontsize=20)
 draw_U()
 
 def draw_V():
     X,Y=s[3,2][0]
     U,V=1,-1
-    ax0.quiver(X,Y,U,V,angles="xy",scale_units="xy",scale=1,clip_on=False,hatch="///",color="red",edgecolor="white",width=0.02)
-    ax0.text(X+0.5,Y-0.5,r"$\vec v$",va="bottom",ha="left",fontsize=16)
+    arrow(X,Y,1,-1,color="red")
+    #ax0.quiver(X,Y,U,V,angles="xy",scale_units="xy",
+    #           scale=1,clip_on=False,hatch="///",color="red",edgecolor="white",width=0.02)
+    ax0.text(X+0.5,Y-0.5,r"$\vec v$",va="bottom",ha="left",color="red",fontsize=20)
 draw_V()
 
 def draw_Q():
@@ -68,7 +88,7 @@ def add_poly(ax,points,color,fill=(0,0,0,0),closed=False):
 
 
 #add_poly(ax0,s[3,3],"red")
-add_poly(ax0,s[3,2][0:3],"red",(0,0,0,0),True)
+#add_poly(ax0,s[3,2][0:3],"red",(0,0,0,0),True)
 #add_poly(ax1,o[3,3],"black")
 #add_poly(ax1,o[3,3][0:3],"black",(0,0,0,0.2))
 
@@ -94,7 +114,7 @@ def draw_indices():
             draw_index(i,j)
 
 #draw_indices()
-draw_index(3,2,"m,n",16)
+draw_index(3,2,"m,n",20)
 
 def draw_axes(ax):
     ax.axis("square")

@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import *
 
+plt.rcParams["text.usetex"] = True
+
 def k(r):
     if np.sqrt(0.6)>r:
         return 8*(0.6-r**2)**4
