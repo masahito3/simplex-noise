@@ -1,10 +1,12 @@
-# A Simplex noise
+# Simplex noise
 
 ## Overview
 
-This is a Simplex noise implementation in python.  
+This is a Simplex noise implementation in Python.  
 It is used in my blog about Simplex noise.  
 
+[Take it easy with Simplex noise](https://sioramen.sub.jp/blog3/2025/02/01/take-it-easy-with-simplex-noise/)  
+  
 [ゆっくりSimplex noiseしていってね](https://sioramen.sub.jp/blog2/blog/2025/01/28/%e3%82%86%e3%81%a3%e3%81%8f%e3%82%8asimplex-noise-%e3%81%97%e3%81%a6%e3%81%84%e3%81%a3%e3%81%a6%e3%81%ad/)  
 
 ![image](etc/simplex2d-10x10.svg)  
