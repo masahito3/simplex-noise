@@ -20,11 +20,14 @@ The python modules Numpy, Matplotlib are required.
 
 When used in a command terminal  
 $ python3 ./simplex2d.py  
+$ python3 ./simplex3d.py  
 
 Or in a Python program, used as a module   
 ...  
 from simplex2d import *  
+from simplex3d import *  
 v=simplex2d(0.5,0.5)  
+v=simplex3d(0.5,0.5,0.5)  
 
 ## Reference
 
