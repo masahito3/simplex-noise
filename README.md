@@ -14,7 +14,7 @@ It is used in my blog about Simplex noise.
 ## Requirement
 
 It runs on Pyhton 3.8 or later and Linux. It hasn't been confirmed to run on Windows.  
-The python modules Numpy, Matplotlib are required.  
+The python modules Numpy, Matplotlib and Mayavi are required.  
 
 ## Usage
 
